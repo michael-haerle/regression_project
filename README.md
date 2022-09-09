@@ -34,41 +34,39 @@ Using the data science pipeline to practice with regression. In this repository 
 
 ### Project Outline:
 - Create README.md with data dictionary, project and business goals, come up with questions to lead the exploration and the steps to reproduce.
-- Acquire data from the Codeup Database and create a function to automate this process. Save the function in an acquire.py file to import into the Final Report Notebook.
-- Clean and prepare data for exploration. Create a function to automate the process, store the function in a prepare.py module, and prepare data in Final Report Notebook by importing and using the funtion.
+- Acquire data from the Codeup Database and create a function to automate this process. Save the function in an wrangle.py file to import into the Final Report Notebook.
+- Clean and prepare data for exploration. Create a function to automate the process, store the function in the wrangle.py module, and prepare data in Final Report Notebook by importing and using the funtion.
 - Produce at least 4 clean and easy to understand visuals.
 - Clearly define hypotheses, set an alpha, run the statistical tests needed, reject or fail to reject the Null Hypothesis, and document findings and takeaways.
+- Scale the data for modeling.
 - Establish a baseline accuracy.
 - Train three different classification models.
 - Evaluate models on train and validate datasets.
 - Choose the model with that performs the best and evaluate that single model on the test dataset.
-- Create csv file with the customer id, the probability of churn, and the model's prediction for each observation in my test dataset.
 - Document conclusions, takeaways, and next steps in the Final Report Notebook.
 
 
 ### Project goals: 
-- My goal is to find and use the key drivers of churn to predict which customer are at risk of churn. I will also recomend potential ways to reduce the monthly rate of churn.
+- My goal is to find and use key drivers of property value for single family properties sold in 2017 to predict property value with the least amount of error.
 
 
 ### Target variable:
-- The target variable for this project is Churn.
+- The target variable for this project is tax value.
 
 ### Initial questions:
 - Where are the correlations in the data?
-- Is there a relationship between Churn and Contract Type?
-- Is there a relationship between churn and phone service?
-- If not is there a relationship with females who churn with phone service?
-- Is there a relationship between people who are above the averge monthly charge and below the average tenure and churn?
+- Is there a relationship between Decade Built and Tax Value?
+- Is there a relationship between Tax Value and the Year Built in LA?
+- What does the data look like on a map?
 
 ### Need to haves (Deliverables):
 - A final report notebook
-- A predictions csv
 - A 5min presentation
 
 
 ### Nice to haves (With more time):
- - If I had more time with the project I would like to explore more combinations of features on my models and I would also implement more feature engineering.
- - I would also like to explore more why females that don't have phone service are less likely to churn.
+ - If I had more time with the data I would focus on more feature engineering more columns.
+ - I would specifically focus more on the square feet of different areas of the property.
 
 
 ### Steps to Reproduce:
