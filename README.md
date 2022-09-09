@@ -71,7 +71,7 @@ Using the data science pipeline to practice with regression. In this repository 
 
 ### Steps to Reproduce:
 - You will need to make an env.py file with a vaild username, hostname and password assigned to the variables user, host, and password
-- Then download the acquire.py, prepare.py, model.py, explore.py, telcoCo.png, and final_report.ipynb
+- Then download the wrangle.py, model.py, and final_report.ipynb
 - Make sure these are all in the same directory and run the final_report.ipynb.
 
 ***
