@@ -79,11 +79,11 @@ Using the data science pipeline to practice with regression. In this repository 
 ## <a name="findings"></a>Key Findings:
 [[Back to top](#top)]
 
-- There are positive correlations with churn and monthly charges, papperless billing, fiber optic, phone service, senior citizen, and those who are above the average monthly charges and below the average tenure.
-- There are negative correlations with churn and tenure, total charges, no internet service, and a two year contract.
-- There is a relationship between churn and contract type.
-- There was not a relationship between both genders who churn and phone service, however there was a relationship between females who churn and phone service.
-- There was a relationship between churn and people who are above the average monthly charge and below the average tenure.
+- Tax Value has a positive correlation with house_size_large, decade, full_bathroom, year_built, square_feet, bathrooms, and bedrooms.
+- Any decade after the 1960's is above the average Tax Value.
+- There were only 12 properties sold on Santa Catalina Island.
+- Properties near the beach tend to have higher Tax Values.
+- In the 1950's there was lots of properties sold, espically those with lower tax values.
 
 
 ***
