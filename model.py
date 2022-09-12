@@ -229,7 +229,7 @@ def eval_models(y_train, y_validate, X_train, X_validate, X_test):
     # Getting rid of the negative predicted value
     replace_lm2 = y_validate['tax_value_pred_lm2'].min()
     replace_lm2_avg = y_validate['tax_value_pred_lm2'].mode()
-    y_validate['tax_value_pred_lm2'] = y_validate['tax_value_pred_lm2'].replace(replace_lm2, replace_lm2_avg[1])
+    y_validate['tax_value_pred_lm2'] = y_validate['tax_value_pred_lm2'].replace(replace_lm2, replace_lm2_avg[0])
 
     # evaluate: rmse
     rmse_train = mean_squared_error(y_train.tax_value, y_train.tax_value_pred_lars)**(1/2)
