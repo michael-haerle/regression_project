@@ -131,13 +131,13 @@ Using the data science pipeline to practice with regression. In this repository 
 - Droped duplicate columns
 - Created dummy variables
 - Concatenated the dummy dataframe
-- Changed the type for senior_citizen, tenure, and monthly_charges
-- Mapped the yes and no to 1 and 0 for columns partner, dependents, phone_service, paperless_billing, and churn
+- Renamed columns
 - Dropped columns not needed
-- Changed the type of total_charges by replacing the white space with a 0
-- Set variables for the mean of tenure and monthly charges
-- Used those variables to feature engineer a new column where it returned a true if they were above the average monthly charge and below the average tenure
-- Mapped the true and false of that columns to 1 and 0
+- Removed ouliers
+- Imputed nulls with 0 for fireplace and full_bathroom
+- Used square feet to feature engineer a new column where it returned small, medium, or large house size
+- Used .apply to apply a custom function to create a decade column for what decade the house was built in
+- Converted latitude and longitude to the proper values
 - Split into the train, validate, and test sets
 
 *********************
@@ -150,8 +150,11 @@ Using the data science pipeline to practice with regression. In this repository 
 
 
 ### Takeaways from exploration:
-- The new column I made for people above the Avg Monthly Charge and Below the Avg Tenure seems to be a good column to use in the modeling phase.
-- Most of the numeric columns will be used for the modeling phase.
+- Tax Value has a positive correlation with house_size_large, decade, full_bathroom, year_built, square_feet, bathrooms, and bedrooms.
+- Any decade after the 1960's is above the average Tax Value.
+- There were only 12 properties sold on Santa Catalina Island.
+- Fireplaces does not apear to be useful for the modeling phase.
+- Decade and the house_size columns will be used during the modeling phase.
 
 ***
 
@@ -162,63 +165,27 @@ Using the data science pipeline to practice with regression. In this repository 
 
 
 #### Hypothesis:
-- The null hypothesis (H<sub>0</sub>) is: Contract Type and churn are independent
-- The alternate hypothesis (H<sub>1</sub>) is: There is a relationship between churn and Contract Type
+- The null hypothesis (H<sub>0</sub>) is: The Decade Built and Tax Value are independent.
+- The alternate hypothesis (H<sub>1</sub>) is: There is a relationship between tax value and the Decade Built.
 
 #### Confidence level and alpha value:
 - I established a 95% confidence level
 - alpha = 1 - confidence, therefore alpha is 0.05
 
 #### Results:
-- We reject the null hypothesis that Contract Type and churn are independent
-- There is a relationship between churn and Contract Type
-- P-Value 3.2053427834370596e-153
-- Chi2 702.26
-- Degrees of Freedom 2
+- We reject the null hypothesis that The Decade Built and Tax Value are independent
+- There is a relationship between tax value and the Decade Built
+- 3.9309219442730487e-16
+- Chi2 214095.42
+- Degrees of Freedom 208846
 
 
 ### Stats Test 2: Chi Square
 
 
-#### Hypothesis(First Plot):
-- The null hypothesis (H<sub>0</sub>) is: Phone Service and churn are independent
-- The alternate hypothesis (H<sub>1</sub>) is: There is a relationship between churn and Phone Service
-
-#### Confidence level and alpha value(First Plot):
-- I established a 95% confidence level
-- alpha = 1 - confidence, therefore alpha is 0.05
-
-
-#### Results(First Plot):
-- We fail to reject the null hypothesis that Phone Service and churn are independent
-- There appears to be no relationship between churn and Phone Service
-- P-Value 0.11104986402814591
-- Chi2 2.54
-- Degrees of Freedom 1
-
-#### Hypothesis(Second Plot):
-- The null hypothesis (H<sub>0</sub>) is: Females who have Phone Service and churn are independent
-- The alternate hypothesis (H<sub>1</sub>) is: There is a relationship between churn and Females with Phone Service
-
-#### Confidence level and alpha value(Second Plot):
-- I established a 95% confidence level
-- alpha = 1 - confidence, therefore alpha is 0.05
-
-
-#### Results(Second Plot):
-- We reject the null hypothesis that Females who have Phone Service and churn are independent
-- There is a relationship between churn and Females with Phone Service
-- P-Value 0.0298505787547087
-- Chi2 4.72
-- Degrees of Freedom 1
-
-
-### Stats Test 3: Chi Square
-
-
 #### Hypothesis:
-- The null hypothesis (H<sub>0</sub>) is: People who are above the Avg Monthly Charge and Below the Avg Tenure are independent with churn
-- The alternate hypothesis (H<sub>1</sub>) is: There is a relationship between churn and people who are above the Avg Monthly Charge and Below the Avg Tenure
+- The null hypothesis (H<sub>0</sub>) is: The Year Built in LA and Tax value are independent.
+- The alternate hypothesis (H<sub>1</sub>) is: There is a relationship between Tax Value and the Year Built in LA.
 
 #### Confidence level and alpha value:
 - I established a 95% confidence level
@@ -226,11 +193,11 @@ Using the data science pipeline to practice with regression. In this repository 
 
 
 #### Results:
-- We reject the null hypothesis that People who are above the Avg Monthly Charge and Below the Avg Tenure are independent with churn
-- There is a relationship between churn and people who are above the Avg Monthly Charge and Below the Avg Tenure
-- P-Value 5.788583939458989e-132
-- Chi2 597.52
-- Degrees of Freedom 1
+- We fail to reject the null hypothesis that The Year Built in LA and Tax value are independent
+- There appears to be no relationship between Tax Value and the Year Built in LA
+- P-Value 0.4721751128088897
+- Chi2 1454990.41
+- Degrees of Freedom 1454872
 
 
 ***
@@ -238,13 +205,13 @@ Using the data science pipeline to practice with regression. In this repository 
 ## <a name="model"></a>Modeling:
 [[Back to top](#top)]
 
-### Baseline
+### Baseline (Using Mean)
     
-- Baseline Results: Accuracy 73%
+- Baseline RMSE: 247730.36
     
 
 - Selected features to input into models:
-    - features = ['bel_avg_ten_abv_avg_mon_chrg', 'internet_service_type_None', 'internet_service_type_Fiber_optic', 'contract_type_Two_year', 'contract_type_One_year', 'gender_Male', 'monthly_charges', 'paperless_billing', 'tenure', 'dependents', 'partner', 'senior_citizen']
+    - features =  ['bedrooms', 'bathrooms', 'square_feet', 'lot_square_feet', 'full_bathroom', 'year_built', 'fips', 'region_zip', 'house_size_large', 'house_size_small', 'decade']
 
 ***
 
