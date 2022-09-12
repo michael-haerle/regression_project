@@ -113,12 +113,12 @@ Using the data science pipeline to practice with regression. In this repository 
 | house_size_large | 1 = House size is in large category, 0 = House size isn't in large category | uint8 |
 | house_size_medium | 1 = House size is in medium category, 0 = House size isn't in medium category | uint8 |
 | house_size_small | 1 = House size is in small category, 0 = House size isn't in small category | uint8 |
-| tax_value_pred_mean | 1 = Male, 0 = Female | float64 |
-| tax_value_pred_median | 1 = Customer has one year contract, 0 = Customer doesn't have one year contract | float64 |
-| tax_value_pred_lm | 1 = Customer has two year contract, 0 = Customer doesn't have two year contract | float64 |
-| tax_value_pred_lars | 1 = Customer has fiber optic internet service, 0 = Customer doesn't have fiber optic internet service | float64 |
-| tax_value_pred_glm | 1 = Customer has no internet service, 0 = Customer doesn't have no internet service | float64 |
-| tax_value_pred_lm2 | 1 = Customer is below average tenure and above average monthly charge,  0 = Customer isn't below average tenure and above average monthly charge| float64 |
+| tax_value_pred_mean | Baseline prediction for tax value using mean | float64 |
+| tax_value_pred_median | Baseline prediction for tax value using mean | float64 |
+| tax_value_pred_lm | Baseline prediction for tax value using a Linear Regression Model | float64 |
+| tax_value_pred_lars | Baseline prediction for tax value using a Lasso + Lars Model | float64 |
+| tax_value_pred_glm | Baseline prediction for tax value using a Tweedie Regressor Model | float64 |
+| tax_value_pred_lm2 | Baseline prediction for tax value using a Polynomial Features Model | float64 |
 ***
 
 ## <a name="wrangle"></a>Data Acquisition and Preparation
@@ -145,10 +145,8 @@ Using the data science pipeline to practice with regression. In this repository 
 ## <a name="explore"></a>Data Exploration:
 [[Back to top](#top)]
 - Python files used for exploration:
-    - prepare.py 
-    - acquire.py
-    - modeling.py
-    - explore.py
+    - wrangle.py
+    - model.py
 
 
 ### Takeaways from exploration:
