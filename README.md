@@ -264,18 +264,16 @@ Model 3 results:
 
 ## Testing the Model
 
-- Model Testing Results: 81% Accuracy
+- Model Testing Results: RMSE 204854.96, R2 0.31
 
 ***
 
 ## <a name="conclusion"></a>Conclusion:
 
-- There are positive correlations with churn and monthly charges, papperless billing, fiber optic, phone service, senior citizen, and those who are above the average monthly charges and below the average tenure.
-- There are negative correlations with churn and tenure, total charges, no internet service, and a two year contract.
-- There is a relationship between churn and contract type.
-- There was not a relationship between both genders who churn and phone service, however there was a relationship between females who churn and phone service.
-- There was a relationship between churn and people who are above the average monthly charge and below the average tenure.
+- Tax Value has a positive correlation with house_size_large, decade, full_bathroom, year_built, square_feet, bathrooms, and bedrooms.
+- Any decade after the 1960's is above the average Tax Value.
+- Our RMSE value for our test dataset beat our baseline by 41,831.16.
 
-#### Idealy we would like to find a way to incentivise more people to sign a one or two year contract as opposed to a month-to-month contract. It would also be benificial to get more people to stay past the average tenure and keep their cost at or below the average monthly charge. 
+#### A way to further improve the our predictions would be ensuring that the data gathered didn't have as many nulls, and a catagory to select if its a certain distance away from a beach. There was an extreme amount of nulls in the data, this is definitely the best way to improve predictions.
 
 [[Back to top](#top)]
