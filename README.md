@@ -218,75 +218,48 @@ Using the data science pipeline to practice with regression. In this repository 
 ## Models:
 
 
-### Model 1: Random Forest
+### Model 1: Lasso + Lars
 
 
 Model 1 results:
-- RandomForestClassifier min_samples_leaf=12, max_depth=8, random_state=123
-- Model stats:
-- Accuracy: 0.81
-- True Positive Rate: 0.51
-- False Positive Rate: 0.08
-- True Negative Rate: 0.92
-- Flase Negative Rate: 0.49
-- Precision: 0.71
-- Recall: 0.51
-- f1 score: 0.59
-- Positive support: 1121
-- Negative support: 3104
-- Accuracy of random forest classifier on training set: 0.81
+- RMSE for Lasso + Lars
+- Training/In-Sample:  212401.75 
+- Validation/Out-of-Sample:  216116.17
+- R2 Value: 0.26
 
 
-
-### Model 2 : K-Nearest Neighbor
+### Model 2 : OLS using LinearRegression
 
 
 Model 2 results:
-- KNeighborsClassifier n_neighbors=15
-- Model stats:
-- Accuracy: 0.81
-- True Positive Rate: 0.51
-- False Positive Rate: 0.08
-- True Negative Rate: 0.92
-- Flase Negative Rate: 0.49
-- Precision: 0.69
-- Recall: 0.51
-- f1 score: 0.58
-- Positive support: 1121
-- Negative support: 3104
-- Accuracy of KNN classifier on training set: 0.81
+- RMSE for OLS using LinearRegression
+- Training/In-Sample:  212395.09 
+- Validation/Out-of-Sample:  216108.91
+- R2 Value: 0.26
 
-### Model 3 : Logistic Regression
+
+### Model 3 : Polynomial Model
 
 Model 3 results:
-- LogisticRegression C=.01, random_state=123, intercept_scaling=1, solver=lbfgs
-- Model stats:
-- Accuracy: 0.80
-- True Positive Rate: 0.46
-- False Positive Rate: 0.09
-- True Negative Rate: 0.91
-- Flase Negative Rate: 0.54
-- Precision: 0.66
-- Recall: 0.46
-- f1 score: 0.55
-- Positive support: 1121
-- Negative support: 3104
-- Accuracy of Logistic Regression classifier on training set: 0.80
+- RMSE for Polynomial Model, degrees=2
+- Training/In-Sample:  204839.27 
+- Validation/Out-of-Sample:  208981.93
+- R2 Value: 0.31
 
 
 ## Selecting the Best Model:
 
 ### Use Table below as a template for all Modeling results for easy comparison:
 
-| Model | Validation |
-| ---- | ----|
-| Baseline | 0.73 |
-| Random Forest | 0.80 |
-| K-Nearest Neighbor | 0.79 | 
-| Logistic Regression | 0.80 |
+| Model | Validation | R2 |
+| ---- | ---- | ---- |
+| Baseline | 247730.36 | 0.0 |
+| Lasso + Lars | 216116.17 | 0.26 |
+| OLS using LinearRegression | 216108.91 |  0.26 |
+| Polynomial Model | 208981.93 | 0.31 |
 
 
-- {Random Forest} model performed the best
+- {Polynomial Model} model performed the best
 
 
 ## Testing the Model
