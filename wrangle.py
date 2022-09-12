@@ -33,7 +33,7 @@ def get_connection(db, user=env.user, host=env.host, password=env.password):
 
 def new_zillow_data():
     return pd.read_sql("""SELECT bedroomcnt, bathroomcnt, calculatedfinishedsquarefeet, taxvaluedollarcnt, yearbuilt, 
-    lotsizesquarefeet, fips, regionidzip, logerror, transactiondate, latitude, longitude, fireplacecnt, fullbathcnt 
+    lotsizesquarefeet, fips, regionidzip, transactiondate, latitude, longitude, fireplacecnt, fullbathcnt 
     FROM properties_2017 JOIN propertylandusetype USING(propertylandusetypeid) 
     JOIN predictions_2017 USING(parcelid) WHERE propertylandusedesc LIKE 'Single Family Residential';""", get_connection('zillow'))
 
